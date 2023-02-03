@@ -1,0 +1,56 @@
+ion-header {
+  &.header-collapse-condense-inactive {
+    ion-toolbar {
+      ion-img {
+        opacity: 0;
+      }
+    }
+  }
+  ion-toolbar {
+    --border-color: transparent;
+    --border-width: 0px;
+    --padding-bottom: 0px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 0px;
+    --min-height: 48px;
+    ion-buttons {
+      ion-back-button {
+        --color: var(--ion-color-secondary);
+        --icon-margin-end: 4px;
+        font-size: 12px;
+        line-height: 18px;
+        --icon-font-size: 10px;
+        min-width: 40px;
+      }
+      ion-button {
+        min-width: 40px;
+        color: var(--ion-color-secondary);
+        font-size: 12px;
+        line-height: 18px;
+        --padding-end: 0px;
+        --padding-start: 0px;
+        margin: 0;
+        ion-icon {
+          margin-right: 4px;
+          font-size: 10px;
+        }
+      }
+    }
+    ion-img {
+      opacity: 1;
+      transition: opacity .2s ease-in-out;
+      height: 24px;
+    }
+    &.ion-color-secondary {
+      ion-buttons {
+        ion-back-button {
+          --color: var(--ion-color-white);
+        }
+        ion-button {
+          color: var(--ion-color-white);
+        }
+      }
+    }
+  }
+}

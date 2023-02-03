@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="content flex flex-1 flex-direction-column">
+    <h3>{{ title }}</h3>
+    <p class="text-large" [innerHTML]="text"></p>
+    <div class="button-container flex flex-1 flex-direction-column">
+      <button-base
+        size="large"
+        [color]="status"
+        [label]="actionButton"
+        (clicked)="dismiss(data, 'confirm')"></button-base>
+      <button-base
+        size="large"
+        color="light"
+        [label]="cancelButton"
+        (clicked)="dismiss(data, 'cancel')"></button-base>
+    </div>
+  </div>
+</ion-content>

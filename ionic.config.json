@@ -1,0 +1,7 @@
+{
+  "name": "Ticketboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

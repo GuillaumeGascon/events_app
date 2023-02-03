@@ -1,0 +1,32 @@
+<header
+  [showButton]="true"></header>
+
+<ion-content>
+  <div class="container">
+    <div class="top-container">
+      <img src="/assets/svg/logo.svg"/>
+    </div>
+    <div class="title-container">
+      <h4>Event list</h4>
+    </div>
+    <ion-list
+      class="event-list"
+      *ngIf="listEvents.length !== 0 && !noEvents">
+      <event-list-card
+      [listEvent]="listEvent"
+      (onClick)="onDelete(listEvent.event.id)"
+      *ngFor="let listEvent of listEvents"></event-list-card>
+    </ion-list>
+    <ion-list
+      class="event-list"
+      *ngIf="listEvents.length === 0 && !noEvents">
+      <event-list-card-skeleton></event-list-card-skeleton>
+      <event-list-card-skeleton></event-list-card-skeleton>
+    </ion-list>
+    <div
+      class="no-event"
+      *ngIf="noEvents">
+      <p class="text-large" *ngIf="listEvents">No Events</p>
+    </div>
+  </div>
+</ion-content>

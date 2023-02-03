@@ -1,0 +1,91 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  .container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 24px 16px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40vh;
+      border-radius: 0 0 64px 64px;
+      background: var(--ion-color-secondary);
+      z-index: 5;
+    }
+    &::after {
+      content: "";
+      border-radius: 50%;
+      position: absolute;
+      top: calc(40vh - 20vw - 2px);
+      left: calc(50% - 20vw - 2px);
+      z-index: 1;
+      width: calc(40vw + 4px);
+      height: calc(40vw + 4px);
+      background-color: var(--ion-color-white-tint);
+      box-shadow: 0 0 60px -35px var(--ion-color-secondary);
+    }
+    .top-container {
+      width: 100%;
+      margin-top: calc(40vh - 24px - 20vw);
+      z-index: 10;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      .logo-container {
+        width: 40vw;
+        height: 40vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: var(--ion-color-tertiary);
+        padding: 24px;
+        ion-img {
+          width: 80%;
+        }
+      }
+    }
+    .bottom-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: calc(60vh - 24px - 20vw);
+      width: 100%;
+      .text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        h1 {
+          padding-top: 32px;
+          color: var(--ion-color-secondary);
+          width: 100%;
+          text-align: center;
+        }
+        p {
+          width: 100%;
+          text-align: center;
+          color: var(--ion-color-secondary);
+          padding-top: 24px;
+        }
+      }
+      .button-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        button-base {
+          width: 100%;
+          &:first-child {
+            margin-bottom: 16px;
+          }
+        }
+      }
+    }
+  }
+}

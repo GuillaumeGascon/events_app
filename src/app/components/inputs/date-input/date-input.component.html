@@ -1,0 +1,35 @@
+<div class="form-item">
+  <ion-label>
+    {{ label }}
+  </ion-label>
+  <ion-item>
+    <ion-input
+      #input
+      type="text"
+      id="trigger-click"
+      [ngClass]="error ? 'has-error' : ''"
+      [name]="name"
+      (blur)="onTouched()"
+      (click)="onChange($any($event.target).value)"
+      (input)="onChange($any($event.target).value)">
+    </ion-input>
+  </ion-item>
+  <p
+    [ngClass]="['text-small',
+                error ? 'has-error' : '']"
+    *ngIf="hint || error">
+    {{ error ? error : hint }}
+  </p>
+</div>
+<ion-popover
+  class="popover-datetime"
+  trigger="trigger-click"
+  triggerAction="click"
+  [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime
+      id="datetime"
+      color="secondary"
+      (ionChange)="setDate($event)"></ion-datetime>
+  </ng-template>
+</ion-popover>

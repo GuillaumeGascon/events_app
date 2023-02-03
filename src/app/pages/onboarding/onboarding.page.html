@@ -1,0 +1,27 @@
+<ion-content>
+  <div class="container">
+    <div class="top-container">
+      <div class="logo-container">
+        <ion-img src="/assets/svg/logo.svg"></ion-img>
+      </div>
+    </div>
+    <div class="bottom-container">
+      <div class="text-container">
+        <h1>{{ appName }}</h1>
+        <p class="text-large">
+          {{ 'pages.onboarding.title' | translate }}
+        </p>
+      </div>
+      <div class="button-container">
+        <button-base
+          size="large"
+          iconSlot="end"
+          iconName="arrow-forward"
+          color="primary"
+          [label]="'pages.onboarding.label' | translate"
+          [icon]="true"
+          (clicked)="navigate('/login')"></button-base>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,21 @@
+<div [ngClass]="['field', color]">
+  <div class="text-container">
+    <ion-label
+      class="text-base"
+      [color]="color">
+      {{ label }}
+    </ion-label>
+    <ion-text
+      class="text-large"
+      [color]="color" >
+      {{ value }}
+    </ion-text>
+  </div>
+  <div class="icon-container">
+    <icon-button
+      [icon]="icon"
+      [color]="color"
+      size="medium"
+      (clicked)="edit.emit()"></icon-button>
+  </div>
+</div>

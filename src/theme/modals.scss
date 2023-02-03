@@ -1,0 +1,14 @@
+#modalSheet {
+  --border-radius: 32px;
+  &.no-radius {
+    --border-radius: 0;
+  }
+  &::part(content) {
+    transition: all .4s ease-in-out;
+  }
+  &::part(backdrop) {
+    &.backdrop-hide {
+      display: none !important;
+    }
+  }
+}

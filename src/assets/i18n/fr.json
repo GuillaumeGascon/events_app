@@ -1,0 +1,49 @@
+{
+  "common": {
+    "add": "Ajouter",
+    "cancel": "Annuler",
+    "copy": "Copier",
+    "continue": "Continuer",
+    "back": "Retour",
+    "send": "Envoyer",
+    "edit": "Modifier",
+    "remove": "Supprimer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "save": "Enregistrer",
+    "skip": "Ignorer",
+    "wrongCode": "Le code est erroné."
+  },
+  "enums": {
+    "language": {
+      "en": "Anglais",
+      "fr": "Français"
+    }
+  },
+  "error": {
+    "access": {
+      "title": "Permission recquise",
+      "body": "Vous ne disposez pas des bonnes persmissions pour effectuer cette action."
+    },
+    "badRefreshToken": {
+      "title": "Token JWT invalide",
+      "body": "Le token que vous avez envoyé au serveur est invalide, relancez l'application puis ré-essayer."
+    },
+    "credential": {
+      "title": "Informations de connexion incorrect",
+      "body": "L'e-mail ou le mot de passe saisie ne correspondent pas aux informations présentent dans notre base de donnée."
+    },
+    "usernameAlreadyUsed": {
+      "title": "Nom d'utilisateur déjà utilisé",
+      "body": "Le nom d'utilisateur que vous avez saisi est malheureusement déjà utilisé, veuillez en saisir un autre."
+    },
+    "emailAlreadyUsed": {
+      "title": "E-mail déjà utilisé",
+      "body": "L'email que vous avez saisi est malheureusement déjà utilisé, veuillez en saisir un autre."
+    },
+    "unknown": {
+      "title": "Erreur inconnue",
+      "body":  "Une erreur inconnue est survenue, veuillez réessayer plus tard ou contacter notre support."
+    }
+  }
+}

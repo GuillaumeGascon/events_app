@@ -1,0 +1,27 @@
+<ion-button
+  (click)="onClick()"
+  [disabled]="disabled"
+  [color]="color"
+  [ngClass]="buttonStyle === 'outline' ?
+              'button-outline' :
+              'button-filled'">
+  <div
+    [ngClass]="['button-content',
+                iconSlot,
+                size,
+                iconOnly ? 'icon-only' : '']">
+    <ng-lottie
+      [options]="options"
+      (animationCreated)="animationCreated($event)"
+      (complete)="animationComplete()"
+      *ngIf="lottie">
+    </ng-lottie>
+    <ion-icon
+      [icon]="iconName"
+      *ngIf="icon"></ion-icon>
+    <ion-label *ngIf="!iconOnly">
+      {{ label }}
+    </ion-label>
+  </div>
+  <ion-ripple-effect></ion-ripple-effect>
+</ion-button>

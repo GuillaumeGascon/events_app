@@ -1,0 +1,20 @@
+<ion-item
+  [button]="true"
+  [detail]="false">
+  <div class="event-container">
+    <div class="image-container">
+      <div class="date-container">
+        <b>{{ listEvent.event.date | date: 'dd':'en':'' }}</b>
+        <p>{{ listEvent.event.date | date: 'LLL':'en':'' }}</p>
+      </div>
+      <base64
+        [b64]="listEvent.image.b64"
+        [mime]="listEvent.image.contentType"></base64>
+    </div>
+    <div class="text-container">
+      <h4>{{ listEvent.event.title }}</h4>
+      <p class="text-large">By {{ listEvent.event.creator }}</p>
+    </div>
+  </div>
+  <ion-ripple-effect></ion-ripple-effect>
+</ion-item>

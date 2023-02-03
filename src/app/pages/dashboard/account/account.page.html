@@ -1,0 +1,40 @@
+<ion-content>
+  <div class="container">
+    <div class="top-container">
+      <div
+        class="title-container"
+        (click)="triggerAdmin()">
+        <h3>Your profile</h3>
+      </div>
+      <profile-card-skeleton *ngIf="!me"></profile-card-skeleton>
+      <profile-card
+        [me]="me"
+        *ngIf="me"></profile-card>
+      <div class="field-container" *ngIf="!me">
+        <field-skeleton></field-skeleton>
+        <field-skeleton></field-skeleton>
+      </div>
+      <div class="field-container" *ngIf="me">
+        <text-fields
+          label="Email"
+          color="secondary"
+          icon="sh-edit"
+          [value]="me.email"
+          *ngIf="me.email"></text-fields>
+        <text-fields
+          label="Password"
+          color="secondary"
+          icon="sh-edit"
+          value="&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;&#183;"></text-fields>
+      </div>
+    </div>
+    <div class="bottom-container">
+      <p class="text-small">App version: {{ appVersion }}</p>
+      <button-transparent
+        label="logout"
+        size="small"
+        color="light-shade"
+        (clicked)="onLogout()"></button-transparent>
+    </div>
+  </div>
+</ion-content>

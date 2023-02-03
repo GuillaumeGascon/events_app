@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="container">
+    <div class="logo-container">
+      <ion-img src="/assets/svg/logo.svg"></ion-img>
+      <h3>{{ appName }}</h3>
+    </div>
+    <div class="baseline-container">
+      <p class="text-large">{{ 'pages.login.baseline' | translate }}</p>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="loginForm">
+        <email-input
+          formControlName="email"
+          name="email"
+          [label]="'pages.login.email' | translate"></email-input>
+        <password-input
+          formControlName="password"
+          name="password"
+          [label]="'pages.login.password' | translate"></password-input>
+      </form>
+      <button-base
+        color="primary"
+        iconSlot="end"
+        size="large"
+        iconName="arrow-forward"
+        [label]="'common.continue' | translate"
+        [disabled]="!loginForm.valid"
+        [icon]="true"
+        (clicked)="login()"></button-base>
+    </div>
+    <div class="divider">
+      <p class="text-base">{{ 'pages.login.or' | translate }}</p>
+    </div>
+    <div class="other-login-method-container">
+      <button-base
+      color="light"
+      iconName="google"
+      buttonStyle="outline"
+      [label]="'pages.login.google' | translate"
+      [icon]="true"></button-base>
+    </div>
+  </div>
+  <ion-progress-bar
+    type="indeterminate"
+    *ngIf="isLoading"></ion-progress-bar>
+</ion-content>

@@ -1,0 +1,89 @@
+{
+  "common": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "copy": "Copy",
+    "continue": "Continue",
+    "back": "Back",
+    "send": "Send",
+    "edit": "Modify",
+    "remove": "Remove",
+    "next": "Next",
+    "previous": "Previous",
+    "save": "Save",
+    "skip": "Skip",
+    "wrongCode": "You entered a wrong code",
+    "login": "Sign In",
+    "register": "Sign Up"
+  },
+  "enums": {
+    "language": {
+      "en": "English",
+      "fr": "French"
+    }
+  },
+  "pages": {
+    "onboarding": {
+      "title": "An app to manage your ticket",
+      "label": "Get Started"
+    },
+    "login": {
+      "baseLine": "Entertain yourself without limit.",
+      "email": "Your email",
+      "password": "Your password",
+      "or": "or",
+      "google": "Sign Up with Google"
+    },
+    "register": {
+      "title": "Let's create your profile",
+      "code": {
+        "description": "First, confirm your email by entering the 6-digit code we sent to your address:",
+        "labelCodeInput": "Enter your verification code",
+        "resend": "Didn't get a code ?",
+        "resendCta": "Click to resend",
+        "codeError": "The code you entered mismatch with the code we've sent to your email address."
+      },
+      "password": {
+        "description": "Set up your password to improve the security of your account.",
+        "passwordLabel": "Your password",
+        "passwordError": "Your password is not strong enough. It should contain min. 8 characters, 1 uppercase, 1 number & 1 special character !",
+        "repeatPasswordLabel": "Confirm your password",
+        "repeatPasswordError": "Both passwords do not match.",
+        "hint": "min. 8 characters, 1 uppercase, 1 number & 1 special character"
+      },
+      "information": {
+        "description": "Let us know who your are !",
+        "userName": "Your username",
+        "firstName": "Your firstname",
+        "lastName": "Your lastname",
+        "disclaimer": "Your username can be seen by other user, your firstname and lastname will only be used to generate your ticket."
+      }
+    }
+  },
+  "error": {
+    "access": {
+      "title": "Permission required",
+      "body": "You don't have the permission to perform this action."
+    },
+    "badRefreshToken": {
+      "title": "Invalid JWT Token",
+      "body": "The token sent to the server is invalid. Please restart the app and try again."
+    },
+    "credential": {
+      "title": "Bad credential",
+      "body": "The given e-mail or password doesn't matcht our database information."
+    },
+    "usernameAlreadyUsed": {
+      "title": "Username already used",
+      "body": "Unfortunally, this username is already used by someone else."
+    },
+    "emailAlreadyUsed": {
+      "title": "E-mail already used",
+      "body": "This e-mail already exist in our database, you can try to recover your password."
+    },
+    "unknown": {
+      "title": "Unknow error",
+      "body":  "An unknown error occurred, please try again later or contact our support."
+    }
+  }
+}

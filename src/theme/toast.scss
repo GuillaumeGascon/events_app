@@ -1,0 +1,130 @@
+.custom-toast {
+  --border-radius: 16px;
+  &::part(icon) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    font-size: 16px !important;
+    padding: 12px;
+    overflow: visible;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      z-index: -1;
+    }
+  }
+  &::part(button) {
+    padding-inline: 0px;
+    padding: 16px 16px 16px 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &::part(header) {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &::part(message) {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &.primary-base {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-white);
+    &::part(icon) {
+      &::before {
+        background: var(--ion-color-secondary-shade);
+      }
+    }
+    &::part(button) {
+      color: var(--ion-color-white);
+    }
+  }
+  &.secondary-base {
+    --background: var(--ion-color-secondary);
+    --color: var(--ion-color-white);
+    &::part(icon) {
+      &::before {
+        background: var(--ion-color-secondary-shade);
+      }
+    }
+    &::part(button) {
+      color: var(--ion-color-white);
+    }
+  }
+  &.danger-base {
+    --background: var(--ion-color-danger);
+    --color: var(--ion-color-white);
+    &::part(icon) {
+      &::before {
+        background: var(--ion-color-danger-shade);
+      }
+    }
+    &::part(button) {
+      color: var(--ion-color-white);
+    }
+  }
+  &.primary-white {
+    --background: var(--ion-color-white);
+    --color: var(--ion-color-secondary);
+    &::part(icon) {
+      color: var(--ion-color-white) !important;
+      &::before {
+        background: var(--ion-color-primary);
+      }
+    }
+    &::part(button) {
+      color: var(--ion-color-primary);
+    }
+  }
+  &.secondary-white {
+    --background: var(--ion-color-white);
+    --color: var(--ion-color-secondary);
+    &::part(icon) {
+      color: var(--ion-color-white) !important;
+      &::before {
+        background: var(--ion-color-secondary);
+      }
+    }
+    &::part(button) {
+      color: var(--ion-color-secondary);
+    }
+  }
+  &.danger-white {
+    --background: var(--ion-color-white);
+    --color: var(--ion-color-secondary);
+    &::part(icon) {
+      color: var(--ion-color-white) !important;
+      &::before {
+        background: var(--ion-color-danger);
+      }
+    }
+    &::part(button) {
+      color: var(--ion-color-danger);
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .custom-toast {
+    &::part(header) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &::part(message) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &::part(button) {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}

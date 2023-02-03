@@ -1,0 +1,120 @@
+<header
+  [changeBackButton]="currentIndex !== 0"
+  [showButton]="currentIndex !== 0"
+  (backButtonClick)="slidePrev()"></header>
+
+<ion-content>
+  <div class="container">
+    <div class="top-container">
+      <img src="/assets/svg/logo.svg"/>
+      <div
+        class="dot-container"
+        *ngIf="length">
+        <span
+          [ngClass]="['dot',
+                      i === currentIndex ?
+                      'active' :
+                      i < currentIndex ?
+                      'success' : '']"
+          *ngFor="let dot of counter(length); let i = index"></span>
+      </div>
+    </div>
+    <div class="title-container">
+      <h4>Let's add another event !</h4>
+    </div>
+    <div class="swiper-container">
+      <swiper
+        #swiper
+        [config]="slideOptions">
+        <ng-template swiperSlide>
+          <div class="swiper-inner-container">
+            <p class="text-large">
+              First, what's the event title and his creator ?
+            </p>
+            <div class="form-container">
+              <form [formGroup]="eventMainInformationsForm">
+                <text-input
+                  label="Title"
+                  name="title"
+                  formControlName="title"></text-input>
+                <text-input
+                  label="Creator"
+                  name="creator"
+                  formControlName="creator"></text-input>
+              </form>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="swiper-inner-container">
+            <p class="text-large">
+              Provide some other informations like date or location.
+            </p>
+            <div class="form-container">
+              <form [formGroup]="eventInformationsForm">
+                <text-input
+                  label="Location"
+                  name="location"
+                  formControlName="location"></text-input>
+                <date-input
+                  label="Date"
+                  name="date"
+                  formControlName="date"
+                  (eventDate)="setDate($event)"></date-input>
+              </form>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="swiper-inner-container">
+            <p class="text-large">
+              And now upload your event banner (must be 210px x 240px)
+            </p>
+            <div class="form-container">
+              <input
+                #uploader
+                type="file"
+                id="file-upload"
+                accept="image/*"
+                [hidden]="true"
+                (change)="setImage($event)"
+              />
+              <ion-item
+                [button]="true"
+                [detail]="false"
+                (click)="openFileDialog()">
+                <div class="item-inner-container">
+                  <div [ngClass]="['item-container', file ? 'no-border' : '']">
+                    <p class="text-base" *ngIf="!file">Select a file</p>
+                    <ion-img
+                      [src]="preview"
+                      *ngIf="file"></ion-img>
+                  </div>
+                </div>
+              </ion-item>
+            </div>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <div class="bottom-container">
+      <button-base
+        color="primary"
+        [disabled]="
+          isLoading ||
+          (!eventMainInformationsForm.valid && currentIndex === 0) ||
+          (!eventInformationsForm.valid && currentIndex === 1) ||
+          (!file && currentIndex === 2)
+        "
+        [label]="currentIndex === 2 ?
+                ('common.save' | translate) :
+                ('common.next' | translate)"
+        (clicked)="currentIndex === 2 ? createEvent() : slideNext()"></button-base>
+      <div class="brand-container">
+        <img src="/assets/svg/logo.svg"/>
+        <h4>Ticketboard</h4>
+      </div>
+    </div>
+  </div>
+</ion-content>
+

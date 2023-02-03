@@ -1,0 +1,17 @@
+<div class="profile-container">
+  <div class="left">
+    <div class="avatar-container">
+      <ion-img [src]="avatar"></ion-img>
+    </div>
+    <div class="text-container">
+      <h4>{{ me.userName }}</h4>
+      <p class="text-large">{{ me.firstName }} {{ me.lastName }}</p>
+    </div>
+  </div>
+  <div class="right">
+    <icon-button
+      color="white"
+      size="medium"
+      icon="sh-edit"></icon-button>
+  </div>
+</div>

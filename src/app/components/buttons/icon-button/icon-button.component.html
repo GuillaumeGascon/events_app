@@ -1,0 +1,8 @@
+<ion-button
+  class="button-transparent"
+  (click)="clicked.emit()">
+  <div [ngClass]="['button-content icon-only', size]">
+    <ion-icon [color]="color" [icon]="icon"></ion-icon>
+  </div>
+  <ion-ripple-effect></ion-ripple-effect>
+</ion-button>

@@ -1,0 +1,9 @@
+ion-button {
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+  width: unset !important;
+  .button-content {
+    height: unset !important;
+    padding: 0 !important;
+  }
+}

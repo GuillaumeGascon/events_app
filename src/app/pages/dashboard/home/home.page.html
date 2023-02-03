@@ -1,0 +1,66 @@
+e<header
+  color="secondary"
+  [translucent]="true"
+  [logo]="true"
+  [showButton]="false"></header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="secondary">
+      <ion-label *ngIf="me">
+        <p class="text-large">Hi, {{ me.userName }}</p>
+        <p class="text-extra">What do you want to do ?</p>
+      </ion-label>
+      <ion-label *ngIf="!me">
+        <ion-skeleton-text
+          animated
+          class="title-skeleton"></ion-skeleton-text>
+        <ion-skeleton-text
+          animated
+          class="text-skeleton"></ion-skeleton-text>
+      </ion-label>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <div class="search-bar-container">
+      <ion-searchbar class="white"></ion-searchbar>
+    </div>
+    <div class="title-container">
+      <h2>Upcoming events</h2>
+    </div>
+    <div class="event-scroll-container" *ngIf="listEvents.length !== 0 && !noEvents">
+      <event-card
+        [listEvent]="listEvent"
+        *ngFor="let listEvent of listEvents"></event-card>
+    </div>
+    <div class="event-scroll-container" *ngIf="listEvents.length === 0 && !noEvents">
+      <event-card-skeleton></event-card-skeleton>
+      <event-card-skeleton></event-card-skeleton>
+    </div>
+    <div class="title-container title-secondary">
+      <h2>Browse by Categories</h2>
+    </div>
+    <div class="filter-container">
+      <button-base
+        color="primary"
+        size="small"
+        label="All"></button-base>
+      <button-base
+        color="light"
+        size="small"
+        label="Music"></button-base>
+      <button-base
+        color="light"
+        size="small"
+        label="Holiday"></button-base>
+      <button-base
+        color="light"
+        size="small"
+        label="Food"></button-base>
+      <button-base
+        color="light"
+        size="small"
+        label="Movie"></button-base>
+    </div>
+  </div>
+</ion-content>

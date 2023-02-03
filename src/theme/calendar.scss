@@ -1,0 +1,16 @@
+ion-popover {
+  &.popover-datetime {
+    &::part(content) {
+      width: calc(100vw - 32px);
+      left: 16px;
+      --max-width: unset;
+    }
+  }
+}
+
+ion-datetime {
+  width: calc(100vw - 32px);
+  &.ion-color-secondary {
+    --background: var(--ion-color-white);
+  }
+}

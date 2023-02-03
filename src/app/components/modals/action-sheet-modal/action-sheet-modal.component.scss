@@ -1,0 +1,29 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  background: var(--ion-color-gray-contrast);
+  --background: var(--ion-color-gray-contrast);
+  .content {
+    width: 100%;
+    padding: 40px 0;
+    background: var(--ion-color-gray-contrast);
+    h3, .text-large {
+      width: 100%;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .text-large {
+      margin: 16px 0 32px !important;
+    }
+    .button-container {
+      padding: 0 16px;
+      button-base {
+        display: flex;
+        width: 100%;
+        &:first-child {
+          margin-bottom: 8px !important;
+        }
+      }
+    }
+  }
+}

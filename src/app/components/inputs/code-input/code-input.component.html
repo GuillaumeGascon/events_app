@@ -1,0 +1,26 @@
+<div class="form-item">
+  <ion-label>
+    {{ label }}
+  </ion-label>
+  <ion-item>
+    <ion-input
+      #input
+      placeholder="000000"
+      inputmode="numeric"
+      pattern="[0-9]{6}"
+      [maxlength]="6"
+      [ngClass]="['code-input',
+                  error ? 'has-error' : '']"
+      [name]="name"
+      (blur)="onTouched()"
+      (click)="onChange($any($event.target).value)"
+      (input)="onChange($any($event.target).value)">
+    </ion-input>
+  </ion-item>
+  <p
+    [ngClass]="['text-small',
+                error ? 'has-error' : '']"
+    *ngIf="hint || error">
+    {{ error ? error : hint }}
+  </p>
+</div>

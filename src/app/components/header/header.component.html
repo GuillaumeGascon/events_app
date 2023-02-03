@@ -1,0 +1,30 @@
+<ion-header [translucent]="translucent">
+  <ion-toolbar
+    [color]="color">
+    <ion-buttons
+      slot="start">
+      <ion-back-button
+        icon="arrow-back"
+        defaultHref="/"
+        [text]="'common.back' | translate"
+        *ngIf="!changeBackButton && showButton">
+        <ion-ripple-effect></ion-ripple-effect>
+      </ion-back-button>
+      <ion-button
+        (click)="backButtonClick.emit()"
+        *ngIf="changeBackButton && showButton">
+        <ion-icon
+          slot="start"
+          icon="arrow-back"></ion-icon>
+        {{ 'common.back' | translate }}
+      </ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="title">
+      {{ title }}
+    </ion-title>
+    <ion-img
+      src="/assets/svg/logo-text-white.svg"
+      *ngIf="logo">
+    </ion-img>
+  </ion-toolbar>
+</ion-header>

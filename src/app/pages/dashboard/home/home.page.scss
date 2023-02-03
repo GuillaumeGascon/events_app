@@ -1,0 +1,125 @@
+ion-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  --background: var(--ion-color-secondary);
+  > ion-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    ion-toolbar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      ion-label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 16px;
+        p {
+          color: var(--ion-color-white);
+        }
+        .title-skeleton {
+          width: 50%;
+          border-radius: 4px;
+          background-color: rgba(var(--ion-color-light-rgb), 0.5);
+          height: 22px;
+          margin-bottom: 2px;
+        }
+        .text-skeleton {
+          width: 75%;
+          border-radius: 4px;
+          background-color: rgba(var(--ion-color-light-rgb), 0.5);
+          height: 28px;
+          margin-top: 2px;
+        }
+      }
+    }
+  }
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--ion-color-white);
+    padding: 0 0 32px 0;
+    overflow: visible;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40vh;
+      border-radius: 0 0 64px 64px;
+      background: var(--ion-color-secondary);
+      z-index: 5;
+    }
+    .search-bar-container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 16px 16px 32px 16px;
+    }
+    .title-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      z-index: 10;
+      padding: 0 16px;
+      h2 {
+        color: var(--ion-color-white);
+        font-weight: 800 !important;
+      }
+      &.title-secondary {
+        h2 {
+          color: var(--ion-color-secondary);
+        }
+      }
+    }
+    .event-scroll-container {
+      position: relative;
+      z-index: 10;
+      overflow-x: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      padding: 24px 0 40px 16px;
+      event-card, event-card-skeleton {
+        margin-right: 16px;
+      }
+    }
+    .filter-container {
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      padding: 16px 0 0 16px;
+      flex-wrap: nowrap;
+      button-base {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  ion-content {
+    > ion-header {
+      ion-toolbar {
+        ion-label {
+          .title-skeleton {
+            height: 18px;
+          }
+          .text-skeleton {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+
+}

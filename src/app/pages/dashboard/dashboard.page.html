@@ -1,0 +1,22 @@
+<ion-tabs class="main-nav">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="play()" tab="home">
+      <ng-lottie
+        [options]="homeOption"
+        (animationCreated)="homeCreated($event)"></ng-lottie>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="play()" tab="ticket">
+      <ng-lottie
+        [options]="ticketOption"
+        (animationCreated)="ticketCreated($event)"></ng-lottie>
+      <ion-label>Tickets</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="play()" tab="account">
+      <ng-lottie
+        [options]="accountOption"
+        (animationCreated)="accountCreated($event)"></ng-lottie>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

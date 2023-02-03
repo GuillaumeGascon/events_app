@@ -1,0 +1,133 @@
+<header
+  [changeBackButton]="currentIndex !== 0"
+  (backButtonClick)="slidePrev()"></header>
+
+<ion-content>
+  <div class="container">
+    <div class="top-container">
+      <img src="/assets/svg/logo.svg"/>
+      <div
+        class="dot-container"
+        *ngIf="length">
+        <span
+          [ngClass]="['dot',
+                      i === currentIndex ?
+                      'active' :
+                      i < currentIndex ?
+                      'success' : '']"
+          *ngFor="let dot of counter(length); let i = index"></span>
+      </div>
+    </div>
+    <div class="title-container">
+      <h4>{{ 'pages.register.title' | translate }}</h4>
+    </div>
+    <div class="swiper-container">
+      <swiper
+        #swiper
+        [config]="slideOptions">
+        <ng-template swiperSlide>
+          <div class="swiper-inner-container">
+            <p
+              class="text-large"
+              *ngIf="email">
+              {{ 'pages.register.code.description' | translate }}
+            </p>
+            <b
+              class="text-large"
+              *ngIf="email">
+              {{ email }}
+            </b>
+            <div class="form-container">
+              <form [formGroup]="verificationCodeForm">
+                <code-input
+                  name="code"
+                  formControlName="code"
+                  [label]="'pages.register.code.labelCodeInput' | translate"
+                  [error]="codeError"></code-input>
+              </form>
+            </div>
+            <div class="resend-code-container">
+              <p class="text-base">
+                {{ 'pages.register.code.resend' | translate }}
+              </p>
+              <ion-button
+                class="button-transparent text-base"
+                [disabled]="isLoading || !canAskNewCode"
+                (click)="sendVerificationCode()">
+                {{ 'pages.register.code.resendCta' | translate }}
+              </ion-button>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="swiper-inner-container">
+            <p class="text-large">
+              {{ 'pages.register.password.description' | translate }}
+            </p>
+            <div class="form-container">
+              <form [formGroup]="passwordForm">
+                <password-input
+                  name="password"
+                  formControlName="password"
+                  [hint]="'pages.register.password.hint' | translate"
+                  [label]="'pages.register.password.passwordLabel' | translate"
+                  [error]="passwordError">
+                </password-input>
+                <password-input
+                  name="repeatPassword"
+                  formControlName="repeatPassword"
+                  [label]="'pages.register.password.repeatPasswordLabel' | translate"
+                  [error]="repeatPasswordError">
+                </password-input>
+              </form>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template swiperSlide>
+          <div class="swiper-inner-container">
+            <p class="text-large">
+              {{ 'pages.register.information.description' | translate }}
+            </p>
+            <div class="form-container">
+              <form [formGroup]="userInformationsForm">
+                <text-input
+                  name="userName"
+                  formControlName="userName"
+                  [label]="'pages.register.information.userName' | translate"></text-input>
+                <text-input
+                  name="firstName"
+                  formControlName="firstName"
+                  [label]="'pages.register.information.firstName' | translate"></text-input>
+                <text-input
+                  name="lastName"
+                  formControlName="lastName"
+                  [label]="'pages.register.information.lastName' | translate"></text-input>
+              </form>
+            </div>
+            <p class="text-base disclaimer">
+              {{ 'pages.register.information.disclaimer' | translate }}
+            </p>
+          </div>
+        </ng-template>
+      </swiper>
+    </div>
+    <div class="bottom-container">
+      <button-base
+        color="primary"
+        [disabled]="
+          isLoading ||
+          (!verificationCodeForm.valid && currentIndex === 0) ||
+          (!passwordForm.valid && currentIndex === 1) ||
+          (!userInformationsForm.valid && currentIndex === 2)
+        "
+        [label]="currentIndex === 2 ?
+                ('common.register' | translate) :
+                ('common.next' | translate)"
+        (clicked)="next()"></button-base>
+      <div class="brand-container">
+        <img src="/assets/svg/logo.svg"/>
+        <h4>Ticketboard</h4>
+      </div>
+    </div>
+  </div>
+</ion-content>

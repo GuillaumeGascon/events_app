@@ -1,0 +1,122 @@
+ion-button {
+  --border-radius: 24px;
+  --padding-bottom: 0px;
+  --padding-end: 0px;
+  --padding-start: 0px;
+  --padding-top: 0px;
+  margin: 0;
+  height: unset;
+  min-height: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transition: all .4s ease-in-out;
+  &::part(native) {
+    transition: all .4s ease-in-out;
+  }
+  &.button-transparent {
+    --background-activated: transparent;
+    --background-activated-opacity: 0;
+    --background-focused: transparent;
+    --background-focused-opacity: 0;
+    --background-hover: transparent;
+    --background-hover-opacity: 0;
+    width: unset;
+    border-radius: 0;
+    --border-radius: 0;
+    color: var(--ion-color-medium);
+    text-decoration: underline;
+    --padding-bottom: 0;
+    --padding-end: 0;
+    --padding-start: 0;
+    --padding-top: 0;
+    background-color: transparent;
+    --background: transparent;
+    --border-color: transparent;
+    --border-width: 0;
+  }
+  &.button-filled {
+    --border-color: transparent;
+    --border-width: 0px;
+  }
+  &.button-outline {
+    &.ion-color-light {
+      --ion-color-base: var(--ion-color-secondary) !important;
+      --border-color: var(--ion-color-light) !important;
+      &::part(native) {
+        border-color: var(--ion-color-light) !important;
+      }
+    }
+  }
+  &.ion-color-primary {
+    &.button-disabled {
+      --background: var(--ion-color-light);
+      --color: var(--ion-color-medium);
+      --ion-color-base: var(--ion-color-light) !important;
+      --ion-color-contrast: var(--ion-color-medium) !important;
+    }
+  }
+  .button-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.start {
+      flex-direction: row;
+      ng-lottie, ion-icon {
+        margin: 0 12px 0 0;
+      }
+    }
+    &.end {
+      flex-direction: row-reverse;
+      ng-lottie, ion-icon {
+        margin: 0 0 0 12px;
+      }
+    }
+    &.icon-only {
+      ng-lottie, ion-icon {
+        margin: 0;
+      }
+    }
+    &.large {
+      height: 48px;
+      padding: 0 24px;
+      ng-lottie, ion-icon {
+        height: 16px;
+        width: 16px;
+      }
+      ion-label {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+      }
+    }
+    &.medium {
+      height: 40px;
+      padding: 0 16px;
+      ng-lottie, ion-icon {
+        height: 14px;
+        width: 14px;
+      }
+      ion-label {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+      }
+    }
+    &.small {
+      height: 36px;
+      padding: 0 12px;
+      ng-lottie, ion-icon {
+        height: 12px;
+        width: 12px;
+      }
+      ion-label {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}

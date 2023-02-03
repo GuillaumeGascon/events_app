@@ -1,0 +1,38 @@
+ion-button {
+  --padding-start: 0 !important;
+  --padding-end: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden;
+  .button-content {
+    padding: 0 !important;
+    &.large {
+      width: 48px;
+    }
+    &.medium {
+      width: 40px;
+    }
+    &.small {
+      width: 36px;
+    }
+    &.primary {
+      ion-icon {
+        color: var(--ion-color-primary) !important;
+      }
+    }
+    &.secondary {
+      ion-icon {
+        color: var(--ion-color-secondary) !important;
+      }
+    }
+    &.white {
+      ion-icon {
+        color: var(--ion-color-white) !important;
+      }
+    }
+    &.light {
+      ion-icon {
+        color: var(--ion-color-light) !important;
+      }
+    }
+  }
+}
